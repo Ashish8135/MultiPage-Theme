@@ -8,6 +8,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js">
   <link rel="stylesheet" href="css/style.css">
 	<title>PhotoShoot Project</title>
 </head>
@@ -155,8 +156,8 @@
 		<div class="row">
 			<div class="col">
 				<div class="container p-5">
-					<a href="#" class="video" data-video="https://www.youtube.com/embed/HnwsG9a5riA" data-toggle="modal" data-target="#videomodal">
-						<i class="fa fa-play fa-3x"></i>
+					<a href="#" class="video" data-video="https://www.youtube.com/embed/bKxL536zqro" data-toggle="modal" data-target="#videomodal">
+					<i class="fa fa-play fa-3x"></i>
 					</a>
 					<h1>See What We Do</h1>
 				</div>	
@@ -167,18 +168,67 @@
 
 <!-- video modal -->
 
-<div class="modal fade" role="dialog" id="videomodal">
-	<div class="modal-dialog modal-dialog-center">
+<div class="modal fade" id="videomodal">
+	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-body">
 				<button class="close" data-dismiss="modal">
 					<span>&times;</span>
 				</button>
-				<iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+				<iframe width="100%" height="300" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<!-- photo gallery section -->
+
+<section id="gallery" class="py-5">
+	<div class="container">
+		<h1 class="text-center">Photo Gallery</h1>
+		<p class="text-center">Check out our photos</p>
+		<div class="row ">
+			<div class="col-md-4">
+				<a href="https://source.unsplash.com/random/560x560" data-toggle="lightbox" data-gallery="img-gallery" data-height="560" data-width="560"></a>
+				<img src="https://source.unsplash.com/random/560x560" class="img-fluid" alt="">
+			</div>
+
+
+			<div class="col-md-4">
+				<a href="https://source.unsplash.com/random/561x561" data-toggle="lightbox" data-gallery="img-gallery" data-height="561" data-width="561"></a>
+				<img src="https://source.unsplash.com/random/561x561" class="img-fluid" alt="">
+			</div>	
+
+			<div class="col-md-4">
+				<a href="https://source.unsplash.com/random/562x562" data-toggle="lightbox" data-gallery="img-gallery" data-height="562" data-width="562"></a>
+				<img src="https://source.unsplash.com/random/562x562" class="img-fluid" alt="">
+			</div>			
+		</div>
+
+
+
+
+		<div class="row py-3">
+			<div class="col-md-4">
+				<a href="https://source.unsplash.com/random/563x563" data-toggle="lightbox" data-gallery="img-gallery" data-height="563" data-width="563"></a>
+				<img src="https://source.unsplash.com/random/563x563" class="img-fluid" alt="">
+			</div>
+
+
+			<div class="col-md-4">
+				<a href="https://source.unsplash.com/random/564x564" data-toggle="lightbox" data-gallery="img-gallery" data-height="564" data-width="564"></a>
+				<img src="https://source.unsplash.com/random/564x564" class="img-fluid" alt="">
+			</div>	
+
+			<div class="col-md-4">
+				<a href="https://source.unsplash.com/random/565x565" data-toggle="lightbox" data-gallery="img-gallery" data-height="565" data-width="565"></a>
+				<img src="https://source.unsplash.com/random/565x565" class="img-fluid" alt="">
+			</div>			
+		</div>
+	</div>
+</section>
+
 
 
 
@@ -188,22 +238,30 @@
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous"></script>
 
 
 
    
  <!-- video play function -->
- <script>
-    $(function(){
-    	$('.video').click(function(){
-    		var themodel=$(this).date('target'),
-    		videosrc=$(this).attr('data-video'),
-    		videosrcauto=videosrc+ "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1;"
-    		$(themodel+'iframe').attr('src',videosrcauto);
-    		$(themodel+'button.close').click(function(){
-    			$(themodel+'iframe').attr('src',videosrc);
-    		});
-    	});
+<script>
+$(document).ready(function(){
+
+autoPlayYouTubeModal();
+
+//FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+function autoPlayYouTubeModal() {
+  var trigger = $("#video").find('[data-toggle="modal"]');
+  trigger.click(function () {
+      var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC + "?autoplay=1";
+      $(theModal + ' iframe').attr('src', videoSRCauto);
+      $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+      });
+  });
+}
 });
   </script>
 </body>
