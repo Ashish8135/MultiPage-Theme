@@ -183,7 +183,6 @@
 
 
 <!-- photo gallery section -->
-
 <section id="gallery" class="py-5">
 	<div class="container">
 		<h1 class="text-center">Photo Gallery</h1>
@@ -230,6 +229,23 @@
 </section>
 
 <!-- NewsLetter -->
+<section id="NewsLetter" class="text-center p-5 bg-dark text-white">
+	<div class="dark-overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Sign Up For Our Newsletter</h1>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio asperiores consectetur, quae ducimus voluptates vero repellendus architecto maiores recusandae mollitia?</p>
+					<form class="form-inline justify-content-center">
+						<input type="text" class="form-control mb-2 mr-2"  placeholder="Enter Name" name="name">
+						<input type="email" class="form-control mb-2 mr-2"  placeholder="Enter Email" name="name">
+						<button class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>	
+		</div>
+	</div>
+</section>
 
 
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -263,6 +279,14 @@ function autoPlayYouTubeModal() {
   });
 }
 });
+
+
+
+// Photo Lightnox init modal
+	$(document).on('click','[data-toggle="lightbox"]',function(event(){
+		event.preventDefault();
+		$(this).ekkoLightbox();
+	});
   </script>
 </body>
 </html>
