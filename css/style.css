@@ -1,4 +1,8 @@
 
+body{
+	overflow-x: hidden;
+}
+
 .navbar{
 	background:#192a56;
 }
@@ -68,4 +72,9 @@
 }
 #video a{
 	color: white;
+}
+
+
+#main-footer{
+	background-color:#192a56;
 }

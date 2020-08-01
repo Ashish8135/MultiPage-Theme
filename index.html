@@ -247,6 +247,17 @@
 	</div>
 </section>
 
+<!-- footer section-->
+<footer id="main-footer" class="text-center py-5 text-white">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<p>Copyright &copy; <span id="year"> PhotoShoot</span></p>
+			</div>
+		</div>
+	</div>
+</footer>
+
 
 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
@@ -287,6 +298,11 @@ function autoPlayYouTubeModal() {
 		event.preventDefault();
 		$(this).ekkoLightbox();
 	});
+
+
+
+	// Footer Year
+	$("#year").text(new Date().getFullYear());
   </script>
 </body>
 </html>
