@@ -78,3 +78,19 @@ body{
 #main-footer{
 	background-color:#192a56;
 }
+
+/*about section*/
+#about-section{
+	height: 250px;
+	background:url("../img/image1.jpg");
+	background-position: 0 -360px;
+	background-attachment: fixed;
+	color: white;
+	border-bottom: 1px white;
+	padding-top: 50px;
+	text-align: center;
+}
+
+.about-img{
+	margin-top: -80px;
+}
