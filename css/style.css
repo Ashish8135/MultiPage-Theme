@@ -94,3 +94,24 @@ body{
 .about-img{
 	margin-top: -80px;
 }
+
+#NewsLetter{
+	height: 250px;
+	background:url("../img/image1.jpg");
+	background-position: 0 -360px;
+	background-attachment: fixed;
+	color: white;
+	border-bottom: 1px white;
+	padding-top: 50px;
+	text-align: center;
+}
+
+#testinomials{
+	background:url('../img/lights.jpg');
+	min-height: 200px;
+	background-attachment: fixed;
+	text-align: center;
+}
+#testinomials .blockquote-footer{
+	color:yellow;
+}
