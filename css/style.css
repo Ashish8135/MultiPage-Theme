@@ -90,11 +90,9 @@ body{
 	padding-top: 50px;
 	text-align: center;
 }
-
 .about-img{
 	margin-top: -80px;
 }
-
 #NewsLetter{
 	height: 250px;
 	background:url("../img/image1.jpg");
@@ -114,4 +112,16 @@ body{
 }
 #testinomials .blockquote-footer{
 	color:yellow;
+}
+
+/*about section*/
+#service-section{
+	height: 250px;
+	background:url("../img/image1.jpg");
+	background-position: 0 -360px;
+	background-attachment: fixed;
+	color: white;
+	border-bottom: 1px white;
+	padding-top: 50px;
+	text-align: center;
 }
