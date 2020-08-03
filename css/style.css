@@ -94,7 +94,6 @@ body{
 	margin-top: -80px;
 }
 #NewsLetter{
-	height: 250px;
 	background:url("../img/image1.jpg");
 	background-position: 0 -360px;
 	background-attachment: fixed;
